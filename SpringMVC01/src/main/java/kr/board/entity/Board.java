@@ -1,10 +1,8 @@
 package kr.board.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class Board {
 	private int idx; //번호
 	private String title; //제목

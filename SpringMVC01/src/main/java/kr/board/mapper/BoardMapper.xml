@@ -4,8 +4,27 @@
 
 	<select id="getLists" resultType="kr.board.entity.Board"> <!-- resultType : select 경우 해당 모델객체 경로 -->
 		SELECT *
-		FROM BOARD
+		FROM MYBOARD
 		ORDER BY IDX DESC
 	</select>
+	
+	<select id="boardContent" resultType="kr.board.entity.Board"> <!-- 값이 1개뿐이면 parameterType생략가능 -->
+		SELECT *
+		FROM MYBOARD
+		WHERE IDX = #{idx}
+		ORDER BY IDX DESC
+	</select>
+	
+	<insert id="boardInsert" parameterType="kr.board.entity.Board">
+		INSERT INTO MYBOARD
+		(TITLE, CONTENT, WRITER)
+		VALUES
+		(#{title}, #{content}, #{writer}) <!-- 파라미터값은 소문자로~ -->
+	</insert>
+	
+	<delete id="boardDelete" parameterType="int">
+		DELETE FROM MYBOARD 
+		WHERE IDX = #{idx}
+	</delete>
 
 </mapper>
