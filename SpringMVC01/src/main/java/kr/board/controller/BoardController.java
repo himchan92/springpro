@@ -45,9 +45,12 @@ public class BoardController {
 	
 	//게시글 상세 조회
 	@GetMapping("/boardContent.do")
-	public String boardContent(@RequestParam("idx") int idx, Model model) {
-		
+	public String boardContent(@RequestParam("idx") int idx, Model model) {		
 		Board vo = mapper.boardContent(idx);
+		
+		//클릭 시 조회수 증가 처리
+		mapper.boardCount(idx);
+		
 		model.addAttribute("vo", vo);
 		return "boardContent"; //상세보기화면
 	}
