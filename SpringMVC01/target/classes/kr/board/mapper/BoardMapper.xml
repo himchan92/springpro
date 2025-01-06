@@ -26,5 +26,12 @@
 		DELETE FROM MYBOARD 
 		WHERE IDX = #{idx}
 	</delete>
+	
+	<update id="boardUpdate" parameterType="kr.board.entity.Board">
+		UPDATE MYBOARD
+		SET TITLE = #{title},
+		    CONTENT = #{content}		    
+        WHERE IDX = #{idx}		    
+	</update>
 
 </mapper>

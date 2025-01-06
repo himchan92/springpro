@@ -59,4 +59,21 @@ public class BoardController {
 		mapper.boardDelete(idx); //삭제처리
 		return "redirect:/boardList.do";		
 	}
+	
+	//게시글 수정 폼
+	@GetMapping("/boardUpdateForm.do/{idx}")
+	public String boardUpdateForm(@PathVariable("idx") int idx, Model model) {
+		Board vo = mapper.boardContent(idx);
+		model.addAttribute("vo", vo);
+		
+		return "boardUpdate";
+	}
+	
+	//게시글 수정 처리
+	@PostMapping("/boardUpdate.do")
+	public String boardUpdate(Board vo) {
+		
+		mapper.boardUpdate(vo); //수정 처리
+		return "redirect:/boardList.do";
+	}
 }

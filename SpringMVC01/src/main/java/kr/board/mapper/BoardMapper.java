@@ -9,4 +9,5 @@ public interface BoardMapper {
 	public void boardInsert(Board vo); //글쓰기 등록
 	public Board boardContent(int idx); //게시글 상세조회
 	public void boardDelete(int idx); //게시글 삭제
+	public void boardUpdate(Board vo); //게시글 수정
 }
