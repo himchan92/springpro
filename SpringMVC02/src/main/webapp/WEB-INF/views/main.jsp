@@ -18,7 +18,7 @@
      function loadList(){
     	// 서버와 통신 : 게시판 리스트 가져오기
     	$.ajax({
-    		url : "boardList.do",
+    		url : "board/all",
     		type : "get",
     		dataType : "json",
     		success : makeView,
@@ -81,7 +81,7 @@
     	 var fData=$("#frm").serialize();
     	 //alert(fData);
     	 $.ajax({
-    		 url : "boardInsert.do",
+    		 url : "board/new",
     		 type : "post",
     		 data : fData,
     		 success : loadList,
@@ -141,7 +141,7 @@
     	 var title=$("#nt"+idx).val();
     	 var content=$("#ta"+idx).val();
     	 $.ajax({
-    		 url : "boardUpdate.do",
+    		 url : "board/update",
     		 type : "put",
     		 contentType:'application/json;charset=utf-8',
     		 data : JSON.stringify({"idx":idx,"title":title,"content":content}),
