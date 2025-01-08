@@ -8,5 +8,12 @@
 		WHERE 1=1
 		  AND memID = #{memID}
 	</select>	
-
+	
+	<insert id="register" parameterType="kr.board.entity.Member">
+		INSERT INTO MEM_TBL
+		(memID, memPassword, memName, memAge, memGender, memEmail, memProfile)
+		values
+		(#{memID}, #{memPassword}, #{memName}, #{memAge}, #{memGender}, #{memEmail}, #{memProfile})
+	</insert>
+	
 </mapper>
