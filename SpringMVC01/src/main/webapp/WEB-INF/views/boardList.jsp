@@ -18,7 +18,24 @@
   <div class="panel panel-default">
     <div class="panel-heading">Board</div>
     <div class="panel-body">
-    	
+    	<table class="table table-bordered table-hover">
+    		<tr>
+    			<td>번호</td>
+    			<td>제목</td>
+    			<td>작성자</td>
+    			<td>작성일</td>
+    			<td>조회수</td>	
+    		</tr>
+    		<c:forEach var="vo" items="${list}">
+    			<tr>
+	    			<td>${vo.idx}</td>
+	    			<td>${vo.title}</td>
+	    			<td>${vo.writer}</td>
+	    			<td>${vo.indate}</td>
+	    			<td>${vo.count}</td>	
+	    		</tr>
+    		</c:forEach>
+    	</table>
     </div>
     <div class="panel-footer">Inflearn_스프1탄_정원준</div>
   </div>
