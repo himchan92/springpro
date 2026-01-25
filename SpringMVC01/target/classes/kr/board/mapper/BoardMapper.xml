@@ -3,7 +3,9 @@
 <mapper namespace="kr.board.mapper.BoardMapper">
 
 	<select id="getLists" resultType="kr.board.entity.Board">
-		select * from board order by idx desc
+		select * 
+		from board 
+		order by idx desc
 	</select>
 
 </mapper>
